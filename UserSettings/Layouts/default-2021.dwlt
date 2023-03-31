@@ -224,7 +224,11 @@ MonoBehaviour:
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 77
+=======
+  controlID: 134
+>>>>>>> parent of 2565257 (Before MRTK Update)
 =======
   controlID: 134
 >>>>>>> parent of 2565257 (Before MRTK Update)
@@ -253,7 +257,11 @@ MonoBehaviour:
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 78
+=======
+  controlID: 42
+>>>>>>> parent of 2565257 (Before MRTK Update)
 =======
   controlID: 42
 >>>>>>> parent of 2565257 (Before MRTK Update)
@@ -357,7 +365,11 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets
+=======
+    - Assets/Scenes
+>>>>>>> parent of 2565257 (Before MRTK Update)
 =======
     - Assets/Scenes
 >>>>>>> parent of 2565257 (Before MRTK Update)
@@ -367,7 +379,11 @@ MonoBehaviour:
   m_StartGridSize: 57
   m_LastFolders:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Assets
+=======
+  - Assets/Scenes
+>>>>>>> parent of 2565257 (Before MRTK Update)
 =======
   - Assets/Scenes
 >>>>>>> parent of 2565257 (Before MRTK Update)
@@ -377,15 +393,21 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs: 7c780000
     m_LastClickedID: 30844
     m_ExpandedIDs: 000000007c7800008c7800009078000000ca9a3bffffff7f
 =======
+=======
+>>>>>>> parent of 2565257 (Before MRTK Update)
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 2e610000
     m_LastClickedID: 24878
     m_ExpandedIDs: 00000000f660000000ca9a3bffffff7f
+<<<<<<< HEAD
+>>>>>>> parent of 2565257 (Before MRTK Update)
+=======
 >>>>>>> parent of 2565257 (Before MRTK Update)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -415,7 +437,11 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 000000007c780000
+=======
+    m_ExpandedIDs: 00000000f6600000
+>>>>>>> parent of 2565257 (Before MRTK Update)
 =======
     m_ExpandedIDs: 00000000f6600000
 >>>>>>> parent of 2565257 (Before MRTK Update)
@@ -556,6 +582,9 @@ MonoBehaviour:
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: a8c3ffff36c5ffff04c7fffffac7ffffbcc9ffffcccaffff1acbffffc6ccffff0ecdffff94ceffff3cd0ffff26d3ffff1ad5ffff46d6ffff0cd7ffff00d8ffff46d8ffff6ed9ffff06daffff54daffffa8dcffff9cddffff32e3ffff3ce3ffff46e3ffff84e3ffff3ce4ffffb2e4ffff4ae7fffff8e8ffff58e9fffface9ffff60f9ffffe0faffff6c610000be610000d8680000306900004c6900006669000070690000a0690000ec6c0000446d0000de6d0000386e0000de6e0000fc6e0000066f000036760000907600004a79000068790000d4790000f2790000f47900001e7a0000
+<<<<<<< HEAD
+>>>>>>> parent of 2565257 (Before MRTK Update)
+=======
 >>>>>>> parent of 2565257 (Before MRTK Update)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -807,9 +836,15 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: -0.000059999526, y: -0.0133500025, z: 0.5905001}
     speed: 2
     m_Value: {x: -0.000059997514, y: -0.013350027, z: 0.5905001}
+=======
+    m_Target: {x: -3.5674272, y: -48.923046, z: 378.1399}
+    speed: 2
+    m_Value: {x: -3.5674272, y: -48.923046, z: 378.1399}
+>>>>>>> parent of 2565257 (Before MRTK Update)
 =======
     m_Target: {x: -3.5674272, y: -48.923046, z: 378.1399}
     speed: 2
@@ -862,6 +897,7 @@ MonoBehaviour:
     m_gridOpacity: 0.5
   m_Rotation:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: -0.12957181, y: 0.22980489, z: -0.030885467, w: -0.9640813}
     speed: 2
     m_Value: {x: -0.12957144, y: 0.22980423, z: -0.03088538, w: -0.96407855}
@@ -869,6 +905,15 @@ MonoBehaviour:
     m_Target: 0.07562579
     speed: 2
     m_Value: 0.075725794
+=======
+    m_Target: {x: -0.098935515, y: 0.0044779163, z: -0.0004452073, w: -0.9950835}
+    speed: 2
+    m_Value: {x: -0.09893553, y: 0.004477917, z: -0.00044520738, w: -0.9950837}
+  m_Size:
+    m_Target: 181.20932
+    speed: 2
+    m_Value: 189.74797
+>>>>>>> parent of 2565257 (Before MRTK Update)
 =======
     m_Target: {x: -0.098935515, y: 0.0044779163, z: -0.0004452073, w: -0.9950835}
     speed: 2

@@ -152,6 +152,7 @@ MonoBehaviour:
   priority: 0
   required: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &-1441640574565721405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +180,8 @@ MonoBehaviour:
   disableFirstPersonObserver: 0
   enablePoseUpdateOnBeforeRender: 0
   validationRuleTarget: 1
+=======
+>>>>>>> parent of 2565257 (Before MRTK Update)
 =======
 >>>>>>> parent of 2565257 (Before MRTK Update)
 --- !u!114 &-766896529883084061
@@ -357,6 +360,7 @@ MonoBehaviour:
   priority: 0
   required: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &2180776643490044145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +381,8 @@ MonoBehaviour:
   company: Microsoft
   priority: 0
   required: 0
+=======
+>>>>>>> parent of 2565257 (Before MRTK Update)
 =======
 >>>>>>> parent of 2565257 (Before MRTK Update)
 --- !u!114 &2209481720854065190
@@ -464,6 +470,7 @@ MonoBehaviour:
   priority: 0
   required: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &2967423702952379507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,6 +496,8 @@ MonoBehaviour:
   rightHandTrackingOptions:
     motionRange: 0
   questHandTrackingMode: 1
+=======
+>>>>>>> parent of 2565257 (Before MRTK Update)
 =======
 >>>>>>> parent of 2565257 (Before MRTK Update)
 --- !u!114 &3125381194089690783

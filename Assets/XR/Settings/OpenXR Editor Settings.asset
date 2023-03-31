@@ -13,11 +13,16 @@ MonoBehaviour:
   m_Name: OpenXR Editor Settings
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   Keys: 010000000e000000
   Values:
   - featureSets: []
   - featureSets:
     - com.microsoft.openxr.featureset.hololens
+=======
+  Keys: 
+  Values: []
+>>>>>>> parent of 2565257 (Before MRTK Update)
 =======
   Keys: 
   Values: []
