@@ -1977,6 +1977,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1328398317, guid: 09736e3514694374c9ea4847db00497b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01048837
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328398317, guid: 09736e3514694374c9ea4847db00497b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0104883695
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328398317, guid: 09736e3514694374c9ea4847db00497b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01048837
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328398317, guid: 09736e3514694374c9ea4847db00497b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 54.217
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328398317, guid: 09736e3514694374c9ea4847db00497b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 68.409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328398317, guid: 09736e3514694374c9ea4847db00497b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -544.41
+      objectReference: {fileID: 0}
     - target: {fileID: 4923377153142883507, guid: 09736e3514694374c9ea4847db00497b,
         type: 3}
       propertyPath: m_Name
@@ -1995,12 +2019,12 @@ PrefabInstance:
     - target: {fileID: 4923377153142977739, guid: 09736e3514694374c9ea4847db00497b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 245.98
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4923377153142977739, guid: 09736e3514694374c9ea4847db00497b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4923377153142977739, guid: 09736e3514694374c9ea4847db00497b,
         type: 3}
