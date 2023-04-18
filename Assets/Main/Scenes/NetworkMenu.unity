@@ -335,6 +335,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455625598}
   m_CullTransparentMesh: 1
+--- !u!1001 &478986226
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1883271524119763093, guid: b1b30d2172aa7cd42a2c1f8b36bfb75a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883271524119763093, guid: b1b30d2172aa7cd42a2c1f8b36bfb75a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 944.8588
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883271524119763093, guid: b1b30d2172aa7cd42a2c1f8b36bfb75a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 419.61087
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883271524119763093, guid: b1b30d2172aa7cd42a2c1f8b36bfb75a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 480.79562
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883271524119763093, guid: b1b30d2172aa7cd42a2c1f8b36bfb75a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883271524119763093, guid: b1b30d2172aa7cd42a2c1f8b36bfb75a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883271524119763093, guid: b1b30d2172aa7cd42a2c1f8b36bfb75a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883271524119763093, guid: b1b30d2172aa7cd42a2c1f8b36bfb75a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883271524119763093, guid: b1b30d2172aa7cd42a2c1f8b36bfb75a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883271524119763093, guid: b1b30d2172aa7cd42a2c1f8b36bfb75a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883271524119763093, guid: b1b30d2172aa7cd42a2c1f8b36bfb75a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883271524119763096, guid: b1b30d2172aa7cd42a2c1f8b36bfb75a,
+        type: 3}
+      propertyPath: m_Name
+      value: TransitionScript
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b1b30d2172aa7cd42a2c1f8b36bfb75a, type: 3}
 --- !u!1 &582524820
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +1050,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1406916399}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1406916399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,7 +1262,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1981416130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21e917f27075fbc4f8007e9417ed25b4, type: 3}
+  m_Script: {fileID: 11500000, guid: b7e8d4c174ec9654788818d84440dcae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1981416132
@@ -1282,7 +1363,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2055424936}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: b7e8d4c174ec9654788818d84440dcae, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2055424936
 MonoBehaviour:
   m_ObjectHideFlags: 0
