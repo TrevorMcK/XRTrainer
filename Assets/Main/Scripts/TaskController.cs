@@ -11,8 +11,8 @@ using UnityEditor;
 public class TaskController : MonoBehaviour
 {
     [SerializeField] private TextAsset taskJson;
-    [SerializeField] private TMP_Text steps;
-    [SerializeField] private TMP_Text title;
+    [SerializeField] private Text steps;
+    [SerializeField] private Text title;
     [SerializeField] private Button next;
     [SerializeField] private Button back;
 

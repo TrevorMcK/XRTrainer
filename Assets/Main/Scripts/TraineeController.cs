@@ -1,16 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 public class TraineeController : MonoBehaviour
 {
-    [SerializeField] private TextAsset[] taskConfig;
-    private Tasklist tasklist = new Tasklist();
+    public SteamVR_Action_Boolean menuOnOff;
 
-    // Start is called before the first frame update
-    void Start()
+    public SteamVR_Input_Sources handType;
+
+    [SerializeField] private GameObject menu;
+
+    private void Start()
     {
-        
+        menuOnOff.AddOnStateDownListener(menuButtonUp,handType);
+        menuOnOff.AddOnStateUpListener(menuButtonDown,handType);
     }
-    
+
+    public void menuButtonUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+    {
+        menu.SetActive(false);
+    }
+    public void menuButtonDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+    {
+        menu.SetActive(true);
+    }
+
 }
