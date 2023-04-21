@@ -2,6 +2,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Netcode.Components;
 
 public class NetworkMenuManagerScript : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class NetworkMenuManagerScript : MonoBehaviour
             return;
         }
         NetworkManager.Singleton.NetworkConfig.PlayerPrefab = (player());
+        NetworkManager.Singleton.StartClient();
         GameObject.Find("Canvas").GetComponent<CanvasGroup>().alpha = 0; //hide the canvas with the menu on it
         MainCamera.SetActive(false); //hide the main camera, switching us to the player prefab camera
 
