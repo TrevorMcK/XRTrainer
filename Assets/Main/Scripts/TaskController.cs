@@ -16,7 +16,7 @@ public class TaskController : MonoBehaviour
     [SerializeField] private Button next;
     [SerializeField] private Button back;
 
-    Dictionary<Task, GameObject> tasks = new Dictionary<Task, GameObject>();
+    
     private Tasklist myTasks = new Tasklist();
     private int indexTasklist = 0;
     //public static TaskController Singleton;
