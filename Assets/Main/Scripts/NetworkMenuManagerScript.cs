@@ -1,9 +1,14 @@
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-public class NetworkMenuManagerScript: MonoBehaviour
+public class NetworkMenuManagerScript : MonoBehaviour
 {
-    public GameObject MainCamera; //the MainCamera
+    [SerializeField] private GameObject MainCamera; //the MainCamera
+    [SerializeField] private GameObject PlayerVRTrainee;
+    [SerializeField] private GameObject PlayerFPSTrainer;
+    [SerializeField] private TMP_Dropdown playerChoice;
 
     private void Start()
     {
@@ -17,10 +22,12 @@ public class NetworkMenuManagerScript: MonoBehaviour
             Debug.Log("No Network manager present, cannot start as host");
             return;
         }
+        
+        NetworkManager.Singleton.NetworkConfig.PlayerPrefab = (player());
         NetworkManager.Singleton.StartHost(); //start the host
         GameObject.Find("Canvas").GetComponent<CanvasGroup>().alpha = 0; //hide the canvas with the menu on it
         MainCamera.SetActive(false); //hide the main camera, switching us to the player prefab camera
-        
+
     }
 
     public void OnClickJoin()
@@ -30,9 +37,23 @@ public class NetworkMenuManagerScript: MonoBehaviour
             Debug.Log("No Network manager present, cannot start as client");
             return;
         }
-        NetworkManager.Singleton.StartClient();
+        NetworkManager.Singleton.NetworkConfig.PlayerPrefab = (player());
         GameObject.Find("Canvas").GetComponent<CanvasGroup>().alpha = 0; //hide the canvas with the menu on it
         MainCamera.SetActive(false); //hide the main camera, switching us to the player prefab camera
+
+    }
+
+    private GameObject player()
+    {
+        switch (playerChoice.value)
+        {
+            case 0:
+                return PlayerVRTrainee;
+                
+            case 1:
+                return PlayerFPSTrainer;
+        }
+        return null;
 
     }
 }
