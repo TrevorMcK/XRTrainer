@@ -18,6 +18,7 @@ public class NetworkMenuManagerScript : MonoBehaviour
         MainCamera = GameObject.Find("Main Camera");//set the reference to the main
         NetworkManager.Singleton.ConnectionApprovalCallback = ApprovalCheck;
         NetworkManager.Singleton.NetworkConfig.ConnectionApproval = true;
+        Cursor.visible = true;
     }
 
     public void OnClickHost()
