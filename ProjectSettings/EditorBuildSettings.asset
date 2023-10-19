@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Scenes/NetworkDemo.unity
     guid: 994a1f314341d844d9756c21b44d2f51
+  - enabled: 1
+    path: Assets/Main/Scenes/VR-FS Selection.unity
+    guid: ad81f2541968f344aab928e1034df851
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
