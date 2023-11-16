@@ -29,9 +29,12 @@ public class Quest
 
     public void OnIntialize(int choiceStep = 0)
     {
+
         int count = 0;
         foreach (QuestNodeData nodeData in questObject.questNodeData)
         {
+            var tempPath = GameObject.Find(nodeData.locationOfObject);
+            steps.Add(tempPath.GetComponent<QuestStep>());
             linkNodeByName.Add(nodeData.guid, nodeData);
             linkStepByName.Add(nodeData.guid, steps[count]);
             steps[count].STEPID = nodeData.guid;

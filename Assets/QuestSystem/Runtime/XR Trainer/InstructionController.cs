@@ -34,7 +34,7 @@ public class InstructionController : NetworkBehaviour  //inherit from networkbeh
     }
 
     //anytime a client interacts with the Instruction controller singleton, it will execute the serverRPC, iterating the quest for everything that uses it //I think
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void IterateServerRpc(string target)
     {
         instructionSet.IterateQuestStep(target);
