@@ -2,7 +2,8 @@
     "name": "QuestSystem.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:6f292b78c9515bd49b6e230cdcd70b56"
+        "GUID:6f292b78c9515bd49b6e230cdcd70b56",
+        "GUID:1491147abca9d7d4bb7105af628b223e"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

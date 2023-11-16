@@ -25,8 +25,9 @@ public class Quest
 
     [SerializeField] private List<QuestStep> steps = new List<QuestStep>();
 
+    public static UnityAction<string> OnChange;
 
-    public void OnIntialize(int choiceStep = 1)
+    public void OnIntialize(int choiceStep = 0)
     {
         int count = 0;
         foreach (QuestNodeData nodeData in questObject.questNodeData)
@@ -36,9 +37,6 @@ public class Quest
             steps[count].STEPID = nodeData.guid;
             count++;
         }
-
-
-
         IterateQuestStep(questObject.questNodeData[choiceStep].guid);
     }
 
@@ -49,7 +47,7 @@ public class Quest
         //questObject = null;
         foreach (var step in tempQuestObject.questNodeData)
         {
-            steps.Add(new QuestStep());
+            //steps.Add(new QuestStep());
         }
         questObject = tempQuestObject;
     }
@@ -57,12 +55,21 @@ public class Quest
 
     public void IterateQuestStep(string nodePicked)
     {
+        string temp = "";
         foreach (NodeLinkData nodeLink in questObject.nodeLinks)
         {
             if (nodeLink.BaseNodeGuid == nodePicked)
             {
                 activeQuestNodes.Add(linkNodeByName[nodeLink.TargetNodeGuid]);
+                
             }
         }
+
+        foreach (var step in activeQuestNodes)
+        {
+            temp = temp + "Choice: " + step.description + "\n";
+        }
+
+        OnChange?.Invoke(temp);
     }
 }

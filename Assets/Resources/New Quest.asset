@@ -27,27 +27,28 @@ MonoBehaviour:
     TargetNodeGuid: 303ec961-acd4-4900-8087-5f2b0b5f62f9
   questNodeData:
   - guid: 38eb05b5-6b5a-4c3b-8545-4f236017f541
-    NodeName: Quest Node
-    position: {x: 352, y: 210}
-    locationOfObject: /Capsule
+    NodeName: 
+    position: {x: 235.2, y: 159.2}
+    locationOfObject: /Electric_bicycle_drivetrain_T2/Component#97/Component#93
     step: {fileID: 0}
     description: First Step
-  - guid: 65f3e909-c17a-4b10-aa24-0a3d6c07e1a7
-    NodeName: Quest Node
-    position: {x: 834, y: 247}
-    locationOfObject: /Sphere
-    step: {fileID: 0}
-    description: 2
   - guid: 36febc79-0b3b-4312-af42-85a72e50bf4f
-    NodeName: Quest Node
-    position: {x: 832, y: 81}
-    locationOfObject: /Cylinder
+    NodeName: 
+    position: {x: 649.60004, y: 44.8}
+    locationOfObject: /Electric_bicycle_drivetrain_T2/Component#97/Component#93/Component#64
+      1
     step: {fileID: 0}
     description: 1
+  - guid: 65f3e909-c17a-4b10-aa24-0a3d6c07e1a7
+    NodeName: 
+    position: {x: 672.8, y: 207.2}
+    locationOfObject: /Electric_bicycle_drivetrain_T2/Component#97/Component#93/Spring
+    step: {fileID: 0}
+    description: 2
   - guid: 303ec961-acd4-4900-8087-5f2b0b5f62f9
-    NodeName: Quest Node
-    position: {x: 887, y: 405}
-    locationOfObject: /Cube
+    NodeName: 
+    position: {x: 672.8, y: 374.4}
+    locationOfObject: /Electric_bicycle_drivetrain_T2/Component#97/Component#95/Component#57
     step: {fileID: 0}
     description: 3
   QUESTID: 

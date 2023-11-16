@@ -5,10 +5,8 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [Serializable]
-public class QuestStep : MonoBehaviour
+public abstract class QuestStep : MonoBehaviour
 {
-
-
     public bool startHere;
 
     public bool active;
