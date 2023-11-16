@@ -8,7 +8,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class GraphSaveUtility 
+public class GraphSaveUtility
 {
     private QuestGraphView questGraphView;
     private QuestObject objectCache;
@@ -45,7 +45,7 @@ public class GraphSaveUtility
             });
         }
 
-        foreach (var questNode in nodes.Where(node=>!node.EntryPoint))
+        foreach (var questNode in nodes.Where(node => !node.EntryPoint))
         {
             questContainer.questNodeData.Add(new QuestNodeData
             {
@@ -53,6 +53,7 @@ public class GraphSaveUtility
                 NodeName = questNode.NodeName,
                 position = questNode.GetPosition().position,
                 description = questNode.description,
+                locationOfObject = questNode.locationOfObject,
                 //step = questNode.step,
 
             });
@@ -63,15 +64,15 @@ public class GraphSaveUtility
             AssetDatabase.CreateFolder("Assets", "Resources");
         }
 
-        AssetDatabase.CreateAsset(questContainer,$"Assets/Resources/{fileName}.asset");
+        AssetDatabase.CreateAsset(questContainer, $"Assets/Resources/{fileName}.asset");
         AssetDatabase.SaveAssets();
-    } 
+    }
     public void LoadGraph(string fileName)
     {
         objectCache = Resources.Load<QuestObject>(fileName);
         if (objectCache == null)
         {
-            EditorUtility.DisplayDialog("File Not Found","Target quest graph file does not exist.","OK");
+            EditorUtility.DisplayDialog("File Not Found", "Target quest graph file does not exist.", "OK");
             return;
         }
 
@@ -86,7 +87,7 @@ public class GraphSaveUtility
         for (int i = 0; i < nodes.Count; i++)
         {
             var connections = objectCache.nodeLinks.Where(x => x.BaseNodeGuid == nodes[i].GUID).ToList();
-            for(int j = 0; j < connections.Count; j++)
+            for (int j = 0; j < connections.Count; j++)
             {
                 var targetNodeGuid = connections[j].TargetNodeGuid;
                 var targetNode = nodes.First(x => x.GUID == targetNodeGuid);
@@ -115,10 +116,10 @@ public class GraphSaveUtility
     {
         foreach (var nodeData in objectCache.questNodeData)
         {
-            var tempNode = questGraphView.CreateQuestNode(nodeData.NodeName, new QuestNode { description = nodeData.description/*, step = nodeData.step*/});
+            var tempNode = questGraphView.CreateQuestNode(nodeData.NodeName, new QuestNode { description = nodeData.description, locationOfObject = nodeData.locationOfObject});
             tempNode.GUID = nodeData.guid;
             questGraphView.AddElement(tempNode);
-            
+
             var nodePorts = objectCache.nodeLinks.Where(x => x.BaseNodeGuid == nodeData.guid).ToList();
             nodePorts.ForEach(x => questGraphView.AddChoicePort(tempNode, x.PortName));
         }
@@ -128,11 +129,11 @@ public class GraphSaveUtility
     {
         nodes.Find(x => x.EntryPoint).GUID = objectCache.nodeLinks[0].BaseNodeGuid;
 
-        foreach(var node in nodes)
+        foreach (var node in nodes)
         {
             if (node.EntryPoint) continue;
-            edges.Where(x=>x.input.node==node).ToList().ForEach(edge=>questGraphView.RemoveElement(edge));
-        
+            edges.Where(x => x.input.node == node).ToList().ForEach(edge => questGraphView.RemoveElement(edge));
+
             questGraphView.RemoveElement(node);
         }
 

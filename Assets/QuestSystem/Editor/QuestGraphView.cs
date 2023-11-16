@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.Search;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
@@ -13,10 +14,11 @@ using UnityEngine.UIElements;
 public class QuestGraphView : GraphView
 {
     public Vector2 defaultNodeSize = new Vector2(200, 150);
-  
-    public QuestGraphView() 
-    {
 
+    private GridBackground grid;
+    private VisualElement background;
+    public QuestGraphView()
+    {
         //EditorStyles.textField.wordWrap = false;
         styleSheets.Add(Resources.Load<StyleSheet>("QuestStyle"));
         SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
@@ -25,11 +27,27 @@ public class QuestGraphView : GraphView
         this.AddManipulator(new SelectionDragger());
         this.AddManipulator(new RectangleSelector());
 
-        var grid = new GridBackground();
-        Insert(0, grid);
-        grid.StretchToParentSize();
+        GenerateGrid();
 
         AddElement(GenerateEntryPointNode());
+    }
+
+    public void GenerateGrid()
+    {
+        if (background != null) Remove(background);
+        grid = new GridBackground();
+        Insert(0, grid);
+        grid.StretchToParentSize();
+    }
+
+    public void DeleteGrid()
+    {
+        if (grid != null) Remove(grid);
+        background = new VisualElement();
+        background.style.backgroundColor = Color.black;
+        Insert(0, background);
+        background.StretchToParentSize();
+
     }
 
     private Port GeneratePort(QuestNode node, Direction direction, Port.Capacity capacity = Port.Capacity.Single)
@@ -46,7 +64,7 @@ public class QuestGraphView : GraphView
             EntryPoint = true
         };
 
-        var genratePort = GeneratePort(node,Direction.Output);
+        var genratePort = GeneratePort(node, Direction.Output);
         genratePort.portName = "Start";
         node.outputContainer.Add(genratePort);
 
@@ -54,7 +72,7 @@ public class QuestGraphView : GraphView
 
         node.RefreshPorts();
 
-        node.SetPosition(new Rect(100,200,100,150));
+        node.SetPosition(new Rect(100, 200, 100, 150));
         return node;
     }
 
@@ -79,12 +97,12 @@ public class QuestGraphView : GraphView
             questNode = giveNode;
         }
 
-        var inputPort = GeneratePort(questNode,Direction.Input,Port.Capacity.Multi);
+        var inputPort = GeneratePort(questNode, Direction.Input, Port.Capacity.Multi);
         inputPort.portName = "Input";
 
-        questNode.inputContainer.Add(inputPort); 
+        questNode.inputContainer.Add(inputPort);
 
-        var button = new Button(() => 
+        var button = new Button(() =>
         {
             AddChoicePort(questNode);
 
@@ -100,11 +118,35 @@ public class QuestGraphView : GraphView
         textFieldDescription.SetValueWithoutNotify(questNode.description);
         questNode.mainContainer.Add(textFieldDescription);
 
+        var tempPath = (UnityEngine.Object)GameObject.Find(questNode.locationOfObject);
+
+        var questObjectField = new UnityEditor.UIElements.ObjectField
+        {
+            value = tempPath
+        };
+        questObjectField.RegisterValueChangedCallback((callback) =>
+        {
+            questNode.locationOfObject = GetGameObjectPath((GameObject)callback.newValue);
+            Debug.Log(questNode.locationOfObject);
+        });
+        questNode.mainContainer.Add(questObjectField);
+
         questNode.RefreshExpandedState();
         questNode.RefreshPorts();
         questNode.SetPosition(new Rect(Vector2.zero, defaultNodeSize));
         return questNode;
 
+    }
+
+    public static string GetGameObjectPath(GameObject obj)
+    {
+        string path = "/" + obj.name;
+        while (obj.transform.parent != null)
+        {
+            obj = obj.transform.parent.gameObject;
+            path = "/" + obj.name + path;
+        }
+        return path;
     }
 
     public void AddChoicePort(QuestNode questNode, string newName = "")
@@ -151,7 +193,7 @@ public class QuestGraphView : GraphView
 
         }
         questNode.outputContainer.Remove(generatedPort);
-        questNode.RefreshPorts() ;
+        questNode.RefreshPorts();
         questNode.RefreshExpandedState();
     }
 
@@ -161,7 +203,7 @@ public class QuestGraphView : GraphView
 
         ports.ForEach(port =>
         {
-            if(startPort!=port && startPort.node != port.node)
+            if (startPort != port && startPort.node != port.node)
             {
                 compatiblePorts.Add(port);
             }

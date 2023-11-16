@@ -2,14 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.UI;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class QuestGraph : EditorWindow
 {
+    public enum GRAPH_CHOICE
+    {
+        LINES_OFF,
+        LINES_ON
+    }
+
     private QuestGraphView questGraphView;
     private string fileName = "New Quest";
+
+    public static GRAPH_CHOICE graphChoice = GRAPH_CHOICE.LINES_ON;
 
     [MenuItem("Graph/Quest Graph")]
     public static void OpenQuestGraphWindow()
@@ -32,6 +41,21 @@ public class QuestGraph : EditorWindow
     private void GenerateToolBar()
     {
         var toolbar = new Toolbar();
+        var enumGraphChoice = new EnumField(GRAPH_CHOICE.LINES_ON);
+        enumGraphChoice.RegisterValueChangedCallback((choice) =>
+        {
+            graphChoice = (GRAPH_CHOICE)choice.newValue;
+            switch (graphChoice)
+            {
+                case GRAPH_CHOICE.LINES_ON:
+                    questGraphView.GenerateGrid(); break;
+                case GRAPH_CHOICE.LINES_OFF: 
+                    questGraphView.DeleteGrid(); break;
+            }
+            
+        });
+        //var dropdownChoiceGraph = new Dropdown();
+        toolbar.Add(enumGraphChoice);
 
         var fileNameTextField = new TextField("File Name:");
         fileNameTextField.SetValueWithoutNotify(fileName);

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75e11807e7631b4468a600f28a5dd2f2, type: 3}
+  m_Name: New Quest
+  m_EditorClassIdentifier: 
+  nodeLinks:
+  - BaseNodeGuid: 3e061439-2130-4766-839f-071e856550ea
+    PortName: Start
+    TargetNodeGuid: 38eb05b5-6b5a-4c3b-8545-4f236017f541
+  - BaseNodeGuid: 38eb05b5-6b5a-4c3b-8545-4f236017f541
+    PortName: Choice 1
+    TargetNodeGuid: 36febc79-0b3b-4312-af42-85a72e50bf4f
+  - BaseNodeGuid: 38eb05b5-6b5a-4c3b-8545-4f236017f541
+    PortName: Choice 2
+    TargetNodeGuid: 65f3e909-c17a-4b10-aa24-0a3d6c07e1a7
+  - BaseNodeGuid: 38eb05b5-6b5a-4c3b-8545-4f236017f541
+    PortName: Choice 3
+    TargetNodeGuid: 303ec961-acd4-4900-8087-5f2b0b5f62f9
+  questNodeData:
+  - guid: 38eb05b5-6b5a-4c3b-8545-4f236017f541
+    NodeName: Quest Node
+    position: {x: 352, y: 210}
+    locationOfObject: /Capsule
+    step: {fileID: 0}
+    description: First Step
+  - guid: 65f3e909-c17a-4b10-aa24-0a3d6c07e1a7
+    NodeName: Quest Node
+    position: {x: 834, y: 247}
+    locationOfObject: /Sphere
+    step: {fileID: 0}
+    description: 2
+  - guid: 36febc79-0b3b-4312-af42-85a72e50bf4f
+    NodeName: Quest Node
+    position: {x: 832, y: 81}
+    locationOfObject: /Cylinder
+    step: {fileID: 0}
+    description: 1
+  - guid: 303ec961-acd4-4900-8087-5f2b0b5f62f9
+    NodeName: Quest Node
+    position: {x: 887, y: 405}
+    locationOfObject: /Cube
+    step: {fileID: 0}
+    description: 3
+  QUESTID: 
+  active: 0

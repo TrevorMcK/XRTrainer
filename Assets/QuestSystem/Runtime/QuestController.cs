@@ -38,9 +38,7 @@ public class QuestController : MonoBehaviour
 
     public void SetCurrentQuest(int choice)
     {
-        //questObjects[currentQuestObject].onSwitch?.Invoke(false);
         currentQuestObject = choice;
-        //questObjects[currentQuestObject].onSwitch?.Invoke(true);
 
     }
 
@@ -48,9 +46,7 @@ public class QuestController : MonoBehaviour
     {
         completedIndex.Add(questCompleteIndex);
 
-        //questObjects.Remove(questObjects[questCompleteIndex]);
-
-        if(questObjects.Count != 0)
+        if (questObjects.Count != 0)
         {
             SetCurrentQuest(0);
         }
@@ -58,10 +54,12 @@ public class QuestController : MonoBehaviour
 
     public void SetupSteps()
     {
-        foreach(Quest quest in questObjects)
+        var tempQuestObject = questObjects;
+        foreach (Quest quest in tempQuestObject)
         {
             quest.SetupSteps();
         }
+        questObjects = tempQuestObject;
     }
 }
 
@@ -70,8 +68,6 @@ public class QuestController : MonoBehaviour
 [CustomEditor(typeof(QuestController))]
 public class CustomEditorQuest : Editor
 {
-
-
     public override void OnInspectorGUI()
     {
         QuestController item = (QuestController)target;

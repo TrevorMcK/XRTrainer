@@ -1,0 +1,16 @@
+{
+    "name": "QuestSystem.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6f292b78c9515bd49b6e230cdcd70b56"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

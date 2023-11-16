@@ -12,36 +12,46 @@ public class Quest
 
     //[SerializeField]private Dictionary<QuestNodeData, QuestStep> questGroup = new Dictionary<QuestNodeData, QuestStep>();
 
-    public UnityEvent<bool> onSwitch;
+    public UnityEvent<bool> OnSwitch;
 
-    public UnityEvent<bool> onObjectInteration;
+    public UnityEvent<bool> OnObjectInteration;
 
     public QuestState state;
 
     public List<QuestNodeData> activeQuestNodes = new List<QuestNodeData>();
 
     private Dictionary<string, QuestNodeData> linkNodeByName = new Dictionary<string, QuestNodeData>();
+    private Dictionary<string, QuestStep> linkStepByName = new Dictionary<string, QuestStep>();
+
     [SerializeField] private List<QuestStep> steps = new List<QuestStep>();
 
 
     public void OnIntialize(int choiceStep = 1)
     {
-
+        int count = 0;
         foreach (QuestNodeData nodeData in questObject.questNodeData)
         {
             linkNodeByName.Add(nodeData.guid, nodeData);
-            
+            linkStepByName.Add(nodeData.guid, steps[count]);
+            steps[count].STEPID = nodeData.guid;
+            count++;
         }
+
+
+
         IterateQuestStep(questObject.questNodeData[choiceStep].guid);
     }
 
 #if UNITY_EDITOR
     public void SetupSteps()
     {
-        foreach (var step in questObject.questNodeData)
+        QuestObject tempQuestObject = questObject;
+        //questObject = null;
+        foreach (var step in tempQuestObject.questNodeData)
         {
             steps.Add(new QuestStep());
         }
+        questObject = tempQuestObject;
     }
 #endif
 

@@ -7,17 +7,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [Serializable]
-public class QuestNode: Node
+public class QuestNode : Node
 {
     public string GUID;
     public bool EntryPoint;
     public string NodeName;
-    //public string title;
-
-    
     public string description;
-
-
+    public string locationOfObject;
 }
-
-

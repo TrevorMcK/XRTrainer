@@ -11,6 +11,7 @@ public class QuestNodeData
     public string NodeName;
     public Vector2 position;
 
+    public string locationOfObject;
 
     public GameObject step;
     public string description;
