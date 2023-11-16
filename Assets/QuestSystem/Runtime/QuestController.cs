@@ -57,7 +57,7 @@ public class QuestController : MonoBehaviour
         var tempQuestObject = questObjects;
         foreach (Quest quest in tempQuestObject)
         {
-            quest.SetupSteps();
+            //quest.SetupSteps();
         }
         questObjects = tempQuestObject;
     }

@@ -15,13 +15,12 @@ public class NetworkMenuManagerScript : MonoBehaviour
 
     private void Start()
     {
-        //MainCamera = GameObject.Find("Main Camera");//set the reference to the main
+        MainCamera = GameObject.Find("Main Camera");//set the reference to the main
         NetworkManager.Singleton.ConnectionApprovalCallback = ApprovalCheck;
         NetworkManager.Singleton.NetworkConfig.ConnectionApproval = true;
 
-        NetworkManager.Singleton.NetworkConfig.ConnectionData = BitConverter.GetBytes(0);
-        NetworkManager.Singleton.StartHost();
-        //Cursor.visible = true;
+        
+        Cursor.visible = true;
     }
 
     public void OnClickHost()
@@ -33,8 +32,8 @@ public class NetworkMenuManagerScript : MonoBehaviour
         }
 
         //NetworkManager.Singleton.NetworkConfig.PlayerPrefab = player(playerChoice.value);
-        NetworkManager.Singleton.NetworkConfig.ConnectionData = BitConverter.GetBytes(playerChoice.value);
-        NetworkManager.Singleton.StartHost(); //start the host
+        NetworkManager.Singleton.NetworkConfig.ConnectionData = BitConverter.GetBytes(0);
+        NetworkManager.Singleton.StartHost();
 
         GameObject.Find("Canvas").GetComponent<CanvasGroup>().alpha = 0; //hide the canvas with the menu on it
         MainCamera.SetActive(false); //hide the main camera, switching us to the player prefab camera
@@ -88,7 +87,7 @@ public class NetworkMenuManagerScript : MonoBehaviour
             Debug.Log("No Network manager present, cannot start as client");
             return;
         }
-        NetworkManager.Singleton.NetworkConfig.ConnectionData = BitConverter.GetBytes(playerChoice.value);
+        NetworkManager.Singleton.NetworkConfig.ConnectionData = BitConverter.GetBytes(1);
         NetworkManager.Singleton.StartClient();
         GameObject.Find("Canvas").GetComponent<CanvasGroup>().alpha = 0; //hide the canvas with the menu on it
         MainCamera.SetActive(false); //hide the main camera, switching us to the player prefab camera
