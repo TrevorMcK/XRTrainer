@@ -8,7 +8,7 @@ using UnityEngine.Events;
 [Serializable]
 public class Quest
 {
-    [SerializeField]private QuestObject questObject;
+    [SerializeField] private QuestObject questObject;
 
     //[SerializeField]private Dictionary<QuestNodeData, QuestStep> questGroup = new Dictionary<QuestNodeData, QuestStep>();
 
