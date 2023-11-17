@@ -25,7 +25,7 @@ public class GrabPlaceStep : QuestStep
     void LetGo()
     {
         Debug.Log(Vector3.Distance(targetLocation.position, this.transform.position));
-        if (2 > Vector3.Distance(targetLocation.position, this.transform.position) && active)
+        if (.5 > Vector3.Distance(targetLocation.position, this.transform.position) && active)
         {
             this.transform.position = targetLocation.position;
             OnCompletion();
@@ -40,6 +40,10 @@ public class GrabPlaceStep : QuestStep
 
             highlightHolder.transform.position = this.transform.position;
             
+        }
+        else
+        {
+            highlightHolder.SetActive(false);
         }
     }
 }

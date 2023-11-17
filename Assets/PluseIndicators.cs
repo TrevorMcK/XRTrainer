@@ -15,6 +15,6 @@ public class PluseIndicators : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localScale = transformLocal.localScale;
+        //transform.localScale = transformLocal.localScale;
     }
 }
