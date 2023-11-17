@@ -15,6 +15,7 @@ public class FirstPlayerContoller : MonoBehaviour
 
     [SerializeField] bool lockCursor = true;
 
+    public static FirstPlayerContoller instance;
 
     float cameraPitch = 0.0f;
     float velocityY = 0.0f;
@@ -35,6 +36,8 @@ public class FirstPlayerContoller : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+
+        instance = this;
     }
 
     // Update is called once per frame

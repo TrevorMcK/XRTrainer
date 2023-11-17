@@ -18,14 +18,18 @@ public abstract class QuestStep : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Y) && active)
         {
+            
             OnCompletion();
         }
     }
 
     public void OnCompletion()
     {
+        active = false;
         InstructionController.Singleton.Iterate(STEPID);
+
+        onFinish?.Invoke();
     }
 }

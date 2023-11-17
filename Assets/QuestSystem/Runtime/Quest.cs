@@ -25,6 +25,8 @@ public class Quest
 
     [SerializeField] private List<QuestStep> steps = new List<QuestStep>();
 
+    public List<QuestNodeData> finishedQuestNodes = new List<QuestNodeData>();
+
     public static UnityAction<string> OnChange;
 
     public void OnIntialize(int choiceStep = 0)
@@ -40,7 +42,7 @@ public class Quest
             steps[count].STEPID = nodeData.guid;
             count++;
         }
-        IterateQuestStep(questObject.questNodeData[choiceStep].guid);
+        IterateQuestStep(questObject.questNodeData.Find(x => x.description == "Intro").guid);
     }
 
 #if UNITY_EDITOR
@@ -59,13 +61,25 @@ public class Quest
     public void IterateQuestStep(string nodePicked)
     {
         string temp = "";
+        foreach (var step in activeQuestNodes)
+        {
+            finishedQuestNodes.Add(step);
+        }
+
+        activeQuestNodes = new List<QuestNodeData>();
+
         foreach (NodeLinkData nodeLink in questObject.nodeLinks)
         {
             if (nodeLink.BaseNodeGuid == nodePicked)
             {
                 activeQuestNodes.Add(linkNodeByName[nodeLink.TargetNodeGuid]);
-                
+                linkStepByName[nodeLink.TargetNodeGuid].active = true;
             }
+        }
+
+        foreach (var step in finishedQuestNodes)
+        {
+            temp = temp + "Finshed: " + step.description + "\n";
         }
 
         foreach (var step in activeQuestNodes)

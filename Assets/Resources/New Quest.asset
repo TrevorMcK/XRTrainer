@@ -16,40 +16,50 @@ MonoBehaviour:
   - BaseNodeGuid: 3e061439-2130-4766-839f-071e856550ea
     PortName: Start
     TargetNodeGuid: 38eb05b5-6b5a-4c3b-8545-4f236017f541
+  - BaseNodeGuid: 36febc79-0b3b-4312-af42-85a72e50bf4f
+    PortName: Choice 1
+    TargetNodeGuid: 303ec961-acd4-4900-8087-5f2b0b5f62f9
+  - BaseNodeGuid: 303ec961-acd4-4900-8087-5f2b0b5f62f9
+    PortName: Choice 1
+    TargetNodeGuid: 65f3e909-c17a-4b10-aa24-0a3d6c07e1a7
   - BaseNodeGuid: 38eb05b5-6b5a-4c3b-8545-4f236017f541
     PortName: Choice 1
     TargetNodeGuid: 36febc79-0b3b-4312-af42-85a72e50bf4f
   - BaseNodeGuid: 38eb05b5-6b5a-4c3b-8545-4f236017f541
     PortName: Choice 2
-    TargetNodeGuid: 65f3e909-c17a-4b10-aa24-0a3d6c07e1a7
-  - BaseNodeGuid: 38eb05b5-6b5a-4c3b-8545-4f236017f541
-    PortName: Choice 3
-    TargetNodeGuid: 303ec961-acd4-4900-8087-5f2b0b5f62f9
+    TargetNodeGuid: a98c9b34-97b5-44d2-b84f-e7a93ecb0e42
   questNodeData:
-  - guid: 38eb05b5-6b5a-4c3b-8545-4f236017f541
-    NodeName: 
-    position: {x: 235.2, y: 159.2}
-    locationOfObject: /Electric_bicycle_drivetrain_T2/Component#97/Component#93
-    step: {fileID: 0}
-    description: First Step
   - guid: 36febc79-0b3b-4312-af42-85a72e50bf4f
     NodeName: 
-    position: {x: 649.60004, y: 44.8}
+    position: {x: 582, y: 161}
     locationOfObject: /Electric_bicycle_drivetrain_T2/Component#97/Component#93/Component#64
       1
     step: {fileID: 0}
-    description: 1
-  - guid: 65f3e909-c17a-4b10-aa24-0a3d6c07e1a7
-    NodeName: 
-    position: {x: 672.8, y: 207.2}
-    locationOfObject: /Electric_bicycle_drivetrain_T2/Component#97/Component#93/Spring
-    step: {fileID: 0}
-    description: 2
+    description: 'Throw Away marked Component: #64'
   - guid: 303ec961-acd4-4900-8087-5f2b0b5f62f9
     NodeName: 
-    position: {x: 672.8, y: 374.4}
+    position: {x: 1005, y: 198}
     locationOfObject: /Electric_bicycle_drivetrain_T2/Component#97/Component#95/Component#57
     step: {fileID: 0}
-    description: 3
+    description: 'Throw Away marked Component: #57'
+  - guid: 65f3e909-c17a-4b10-aa24-0a3d6c07e1a7
+    NodeName: 
+    position: {x: 887, y: 403}
+    locationOfObject: /Electric_bicycle_drivetrain_T2/Component#97/Component#93/Spring
+    step: {fileID: 0}
+    description: 'Throw Away marked Component: Spring'
+  - guid: 38eb05b5-6b5a-4c3b-8545-4f236017f541
+    NodeName: 
+    position: {x: 111, y: 362}
+    locationOfObject: /Electric_bicycle_drivetrain_T2/Component#97/Component#93
+    step: {fileID: 0}
+    description: Intro
+  - guid: a98c9b34-97b5-44d2-b84f-e7a93ecb0e42
+    NodeName: 
+    position: {x: 478, y: 567}
+    locationOfObject: /Electric_bicycle_drivetrain_T2/Component#97/Component#96/Component#83/Group#99
+      1
+    step: {fileID: 0}
+    description: Place Petal in meaningless place.
   QUESTID: 
   active: 0

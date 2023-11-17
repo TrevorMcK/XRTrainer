@@ -20,11 +20,11 @@ public class SteamVRInitializer : MonoBehaviour
 
     private IEnumerator InitRoutine()
     {
-        XRGeneralSettings.Instance.Manager.InitializeLoader();
+        
         
 
-        yield return new WaitForSeconds(1);
-        Debug.Log("TEST: "+XRGeneralSettings.Instance.Manager.isInitializationComplete);
+        yield return XRGeneralSettings.Instance.Manager.InitializeLoader();
+        Debug.Log("TEST: " + XRGeneralSettings.Instance.Manager.isInitializationComplete);
 
         if (XRGeneralSettings.Instance.Manager.activeLoader == null)
         {
